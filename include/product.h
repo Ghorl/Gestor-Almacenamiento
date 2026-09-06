@@ -9,6 +9,9 @@ class Product {
      int stock;
      std::string date_added; //fecha en la que se agrego el producto
     
+    protected:
+      void setId(int newId) { id = newId; }
+      friend class Inventory; //la clase Inventory puede acceder a los miembros privados de Product
     public:
      Product(int id, const std::string& name, double price, int stock, const std::string& date_added)
             : id(id), name(name), price(price), stock(stock), date_added(date_added) {}
